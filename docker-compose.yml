@@ -1,0 +1,24 @@
+services:
+  backend_service:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres_service
+    volumes:
+      - media:/app/media
+    env_file:
+      - .env
+
+  postgres_service:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  pg_data:
+  media:
