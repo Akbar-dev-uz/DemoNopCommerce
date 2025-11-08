@@ -1,0 +1,115 @@
+{% load static %}
+<header class="header">
+    <a class="skip" href="#main">Skip navigation</a>
+    <div class="header-upper">
+        <div class="header-selectors-wrapper">
+            <div class="currency-selector">
+                <select id="customerCurrency" name="customerCurrency" aria-label="Currency selector">
+                    <option selected value="#">US Dollar</option>
+                    <option value="#">Euro</option>
+                </select>
+            </div>
+        </div>
+        <div class="header-links-wrapper">
+            <div class="header-links">
+                <nav>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <!-- Пользователь вошёл -->
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <!-- Пользователь не вошёл -->
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                        <li><a href="#" class="ico-wishlist">Wishlist <span class="wishlist-qty">(0)</span></a></li>
+                        <li><a href="#" class="ico-cart">Shopping cart <span class="cart-qty">(0)</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header-lower">
+        <div class="header-logo">
+            <a href="/">
+                <img src="{% static 'shop/images/logo.png' %}" alt="nopCommerce demo store">
+            </a>
+        </div>
+        <div role="search" class="search-box store-search-box">
+            <form method="get" action="#">
+                <input type="text" class="search-box-text" name="q" placeholder="Search store"
+                       aria-label="Search store">
+                <button type="submit" class="button-1 search-box-button">Search</button>
+            </form>
+        </div>
+    </div>
+</header>
+<div class="header-menu">
+    <nav class="menu-container menu-dropdown">
+        <div id="menu-1" class="menu__toggle" role="button">Categories</div>
+        <div role="menu" class="menu" aria-labelledby="menu-1">
+            <div class="menu__item menu-dropdown" role="menuitem">
+                <div class="menu__item-toggle" aria-haspopup="menu" tabindex="-1"><a
+                        href="https://demo.nopcommerce.com/computers" aria-expanded="false" aria-haspopup="menu"
+                        role="button" class="menu__link" tabindex="0">Computers</a></div>
+                <div class="menu__list-view" role="menu" aria-label="Computers">
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/desktops"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Desktops</a>
+                    </div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/notebooks"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Notebooks</a>
+                    </div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/software"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Software</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item menu-dropdown" role="menuitem">
+                <div class="menu__item-toggle" aria-haspopup="menu" tabindex="-1"><a
+                        href="https://demo.nopcommerce.com/electronics" aria-expanded="false" aria-haspopup="menu"
+                        role="button" class="menu__link" tabindex="0">Electronics</a></div>
+                <div class="menu__list-view" role="menu" aria-label="Electronics">
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/camera-photo"
+                                                               role="button" class="menu__link" tabindex="0">Camera
+                        &amp; photo</a></div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/cell-phones"
+                                                               role="button" class="menu__link" tabindex="0">Cell
+                        phones</a></div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/others"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Others</a></div>
+                </div>
+            </div>
+            <div class="menu__item menu-dropdown" role="menuitem">
+                <div class="menu__item-toggle" aria-haspopup="menu" tabindex="-1"><a
+                        href="https://demo.nopcommerce.com/apparel" aria-expanded="false" aria-haspopup="menu"
+                        role="button" class="menu__link" tabindex="0">Apparel</a></div>
+                <div class="menu__list-view" role="menu" aria-label="Apparel">
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/shoes"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Shoes</a></div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/clothing"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Clothing</a>
+                    </div>
+                    <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/accessories"
+                                                               role="button" class="menu__link"
+                                                               tabindex="0">Accessories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/digital-downloads"
+                                                       role="button" class="menu__link" tabindex="0">Digital
+                downloads</a></div>
+            <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/books" role="button"
+                                                       class="menu__link" tabindex="0">Books</a></div>
+            <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/jewelry" role="button"
+                                                       class="menu__link" tabindex="0">Jewelry</a></div>
+            <div class="menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/gift-cards" role="button"
+                                                       class="menu__link" tabindex="0">Gift Cards</a></div>
+        </div>
+    </nav>
+</div>

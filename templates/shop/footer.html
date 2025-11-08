@@ -1,0 +1,74 @@
+<footer class="footer">
+    <section class="footer-upper">
+        <nav class="footer-navigation">
+            <div class="footer-menu" role="none">
+                <h2 id="footer-menu-3" class="footer-menu__title footer-menu__toggle" aria-haspopup="menu" aria-expanded="false">Information</h2>
+                <div class="footer-menu__list" role="menu" aria-labelledby="footer-menu-3">
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/sitemap" class="footer-menu__link">Sitemap</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/shipping-returns" class="footer-menu__link">Shipping &amp; returns</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/privacy-notice" class="footer-menu__link">Privacy notice</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/conditions-of-use" class="footer-menu__link">Conditions of Use</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/about-us" class="footer-menu__link">About us</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/contactus" class="footer-menu__link">Contact us</a></div>
+                </div>
+            </div>
+
+            <div class="footer-menu" role="none">
+                <h2 id="footer-menu-4" class="footer-menu__title footer-menu__toggle" aria-haspopup="menu" aria-expanded="false">Customer service</h2>
+                <div class="footer-menu__list" role="menu" aria-labelledby="footer-menu-4">
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/search" class="footer-menu__link">Search</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/news" class="footer-menu__link">News</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/blog" class="footer-menu__link">Blog</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/recentlyviewedproducts" class="footer-menu__link">Recently viewed products</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/compareproducts" class="footer-menu__link">Compare products list</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/newproducts" class="footer-menu__link">New products</a></div>
+                </div>
+            </div>
+
+            <div class="footer-menu" role="none">
+                <h2 id="footer-menu-5" class="footer-menu__title footer-menu__toggle" aria-haspopup="menu" aria-expanded="false">My account</h2>
+                <div class="footer-menu__list" role="menu" aria-labelledby="footer-menu-5">
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/customer/info" class="footer-menu__link">My account</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/order/history" class="footer-menu__link">Orders</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/customer/addresses" class="footer-menu__link">Addresses</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/cart" class="footer-menu__link">Shopping cart</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/wishlist" class="footer-menu__link">Wishlist</a></div>
+                    <div class="footer-menu__item" role="menuitem"><a href="https://demo.nopcommerce.com/vendor/apply" class="footer-menu__link">Apply for vendor account</a></div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="footer-block follow-us">
+            <div class="social">
+                <h2 class="title">Follow us</h2>
+                <ul class="networks">
+                    <li class="facebook"><a href="https://www.facebook.com/nopCommerce" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li class="twitter"><a href="https://twitter.com/nopCommerce" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li class="rss"><a href="https://demo.nopcommerce.com/news/rss/1">RSS</a></li>
+                    <li class="youtube"><a href="https://www.youtube.com/user/nopCommerce" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/nopcommerce_official" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter" role="form">
+                <h2 class="title">Newsletter</h2>
+                <div class="newsletter-subscribe" id="newsletter-subscribe-block">
+                    <div class="newsletter-email">
+                        <input id="newsletter-email" class="newsletter-subscribe-text" placeholder="Enter your email here..." aria-label="Sign up for our newsletter" type="email" name="NewsLetterEmail">
+                        <button type="button" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button">Subscribe</button>
+                    </div>
+                    <div class="newsletter-validation">
+                        <span id="subscribe-loading-progress" style="display:none" class="please-wait">Wait...</span>
+                        <span class="field-validation-valid" data-valmsg-for="NewsLetterEmail" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="newsletter-result" id="newsletter-result-block"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-lower">
+        <div class="footer-info"><span class="footer-disclaimer">Copyright © 2025 nopCommerce demo store. All rights reserved.</span></div>
+        <div class="footer-powered-by">Powered by <a href="{% url 'home' %}" target="_blank">nopCommerce</a></div>
+    </section>
+</footer>

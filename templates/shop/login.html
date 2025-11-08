@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login - Demo Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'shop/styles.css' %}">
+</head>
+<body>
+<div class="master-wrapper-page">
+    {% include 'shop/header.html' %}
+    <main class="master-wrapper-content" id="main">
+        <div class="master-column-wrapper">
+            <section class="center-1">
+                <div class="page login-page">
+                    <div class="page-title"><h1>Welcome, Please Sign In!</h1></div>
+                    <div class="page-body">
+                        <div class="customer-blocks">
+                            <!-- New Customer -->
+                            <div class="new-wrapper register-block">
+                                <h2 class="title">New Customer</h2>
+                                <div class="text">
+                                    By creating an account on our website, you will be able to shop faster,
+                                    be up to date on an order's status, and keep track of your previous orders.
+                                </div>
+                                <div class="buttons">
+                                    <a href="{% url 'register' %}" class="button-1 register-button">Register</a>
+                                </div>
+                            </div>
+
+                            <!-- Returning Customer -->
+                            <div class="returning-wrapper fieldset">
+                                <h2 class="title">Returning Customer</h2>
+                                {% if messages %}
+                                    <div>
+                                        {% for message in messages %}
+                                            <p style="color: red;">{{ message }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <form method="post" autocomplete="off" action="{% url 'login' %}">
+                                    {% csrf_token %}
+                                    <div class="form-fields">
+                                        <div class="inputs">
+                                            <label for="username">Username:</label>
+                                            <input type="text" name="username" id="username" required>
+                                        </div>
+                                        <div class="inputs">
+                                            <label for="password">Password:</label>
+                                            <div class="login-password">
+                                                <input type="password" name="password" id="password" required>
+                                                <span class="password-eye"></span>
+                                            </div>
+                                        </div>
+                                        <div class="inputs reversed">
+                                            <input type="checkbox" name="remember" id="remember">
+                                            <label for="remember">Remember me?</label>
+                                            <span class="forgot-password">
+                                                <a href="https://demo.nopcommerce.com/passwordrecovery">Forgot password?</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <button type="submit" class="button-1 login-button">Log in</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="external-authentication"></div>
+
+                        <div class="topic-block">
+                            <div class="topic-block-title"><h2>About login / registration</h2></div>
+                            <div class="topic-block-body">
+                                <p>Put your login / registration information here. You can edit this in the admin
+                                    site.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    {% include 'shop/footer.html' %}
+</div>
+
+<script src="{% static 'shop/scripts.js' %}"></script>
+<script>
+    // Show/hide password
+    document.addEventListener('DOMContentLoaded', function () {
+        const passwordInput = document.getElementById('password');
+        const toggleEye = document.querySelector('.password-eye');
+        toggleEye.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleEye.classList.add('password-eye-open');
+            } else {
+                passwordInput.type = 'password';
+                toggleEye.classList.remove('password-eye-open');
+            }
+        });
+    });
+</script>
+</body>
+</html>
